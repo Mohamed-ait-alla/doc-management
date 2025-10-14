@@ -1,42 +1,42 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121219;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
+body, html {
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.header-container {
+  background: #1c1c26;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
-a {
-  color: inherit;
+.header-container h3 {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #ffffff;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 15px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px rgba(108, 140, 255, 0.5);
+  cursor: pointer;
+}
+
+.header-container nav a {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
+  color:  #cccccc;
+  padding: 0.5rem 1.5rem;
+  transition: color 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.header-container nav a:hover {
+  color:#ffffff;
 }
