@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Search from "./components/Search";
+import DocList from "./components/DocList";
 
 export default function Home() {
   return (
@@ -10,7 +11,10 @@ export default function Home() {
       <div className="search-container">
         <Search />
       </div>
-
+      <div className="doc-list-container">
+        <h3>Document List</h3>
+        <DocList />
+      </div>
      </div>
     </div>
   );
