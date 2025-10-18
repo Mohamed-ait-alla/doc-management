@@ -11,7 +11,7 @@ export default function Home() {
       <div className="search-container">
         <Search />
       </div>
-      <div className="doc-list-container">
+      <div className="docs-list-container">
         <h3>Document List</h3>
         <DocList />
       </div>
