@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 
@@ -6,8 +7,10 @@ const Header = () => {
         <div className="header-container">
             <h3>DocManager</h3>
             <nav>
-                <a href="#">Documents</a>
-                <a href="#">Add New Document</a>
+                <ul>
+                    <li><Link href="/documents">Documents</Link></li>
+                    <li><Link href="/add-document">Add New Document</Link></li>
+                </ul>
             </nav>
         </div>
     );
