@@ -5,8 +5,6 @@ import DocList from "./components/DocList";
 export default function Home() {
   return (
     <div>
-     <Header />
-
      <div className="body-container">
       <div className="search-container">
         <Search />

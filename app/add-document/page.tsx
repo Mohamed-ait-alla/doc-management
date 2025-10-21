@@ -7,7 +7,7 @@ export default function AddDocumentPage() {
             <h1>Add New Document</h1>
             <form>
                 <label>
-                    Document name:
+                    Document Name:
                     <input type="text" name="documentName" required/>
                 </label>
                 <br/>
@@ -18,7 +18,7 @@ export default function AddDocumentPage() {
                 <br/>
                 <label>
                     Select Image:
-                    <input type="file" name="file" />
+                    <input type="file" name="file" required/>
                 </label>
                 <br/>
                 <button type="submit">Add Document</button>

@@ -8,6 +8,8 @@ body, html {
   color: var(--foreground);
 }
 
+/* main page styles */
+
 .header-container {
   background: #1c1c26;
   display: flex;
@@ -183,3 +185,87 @@ tbody tr td button:hover {
   background-color:  #e04a4a;
 }
 
+/* add-document page styles */
+
+.add-document-container {
+  background-color: #1e1e2f;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 3rem auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #f0f0f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add-document-container h1 {
+  font-size: 1.8rem;
+  color:  #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.add-document-container form label {
+  display: block;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.add-document-container input[type="text"],
+.add-document-container textarea,
+.add-document-container input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  background-color:  #2a2a3d;
+  color: #f0f0f5;
+  border: 1px solid #3c3c4f;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.add-document-container input[type="text"]:focus,
+.add-document-container textarea:focus,
+.add-document-container input[type="file"]:focus {
+  border: 2px solid #5c6bc0;
+  outline: none;
+}
+
+.add-document-container textarea {
+  resize: none;
+}
+
+.add-document-container input[type="file"]::file-selector-button {
+  background-color: #44445e;
+  color:  #f0f0f5;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-document-container input[type="file"]::file-selector-button:hover {
+  background-color: #5c5c7a;
+}
+
+.add-document-container button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #5c6bc0;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.add-document-container button[type="submit"]:hover {
+  background-color: #7986cb;
+}
