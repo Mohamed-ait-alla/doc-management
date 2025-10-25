@@ -1,4 +1,3 @@
-import Header from "./components/Header";
 import Search from "./components/Search";
 import DocList from "./components/DocList";
 
