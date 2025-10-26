@@ -1,7 +1,20 @@
+'use client';
+
 import Link from "next/link";
 import React from "react";
 
-const DocList = () => {
+// Defining types
+type Document = {
+    id: number;
+    name: string;
+};
+
+type DocListProps = {
+    documents: Document[];
+};
+
+// DocList Component
+const DocList: React.FC<DocListProps> = ({ documents }) => {
     return (
         <div>
             <table>
@@ -14,17 +27,21 @@ const DocList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Resume</td>
-                        <td>2025/10/16</td>
-                        <td>
-                           <Link href="#">
-                                View
-                           </Link>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
+                    {
+                        documents.map((doc) => (
+                            <tr key={doc.id}>
+                                <td>{doc.id}</td>
+                                <td>{doc.name}</td>
+                                <td>2025/10/16</td>
+                                <td>
+                                    <Link href="#">
+                                        View
+                                    </Link>
+                                    <button>Delete</button>
+                                </td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
         </div>

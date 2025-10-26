@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AddDocumentPage() {
     // var declarations
@@ -9,11 +10,25 @@ export default function AddDocumentPage() {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [file, setFile] = useState<File | null>(null);
+    const router = useRouter();
+
+    // load existing documents from localStorage if any
+    useEffect(() => {
+        const storedDocs = localStorage.getItem("documents");
+        if (storedDocs)
+        {
+            const parsed = JSON.parse(storedDocs);
+            setDocuments(parsed);
+            const maxId = parsed.length ? Math.max(...parsed.map((d: { id: number; }) => d.id)) : 0;
+            setId(maxId + 1);
+        }
+    }, []);
 
     // function that handles adding new documents to the array
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
 
+        // declare new object
         const newDocument = {
             id,
             name,
@@ -21,17 +36,21 @@ export default function AddDocumentPage() {
             file,
         };
 
-        const tmpDocuments = [...documents, newDocument];
-        console.log(tmpDocuments);
-        
         // add the new object (document)
-        setDocuments(tmpDocuments);
+        const tmpDocuments = [...documents, newDocument];
+        setDocuments(tmpDocuments);  
+        
+        // save docs to localStorage
+        localStorage.setItem("documents", JSON.stringify(tmpDocuments));
 
-        // reset values
+        // reset form
         setId(id + 1);
         setName('');
         setDescription('');
         setFile(null);
+
+        // switch to the main page
+        router.push("/");
     }
 
     return (
