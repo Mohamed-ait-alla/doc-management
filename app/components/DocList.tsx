@@ -7,6 +7,7 @@ import React from "react";
 type Document = {
     id: number;
     name: string;
+    createdAt: string;
 };
 
 type DocListProps = {
@@ -32,7 +33,7 @@ const DocList: React.FC<DocListProps> = ({ documents }) => {
                             <tr key={doc.id}>
                                 <td>{doc.id}</td>
                                 <td>{doc.name}</td>
-                                <td>2025/10/16</td>
+                                <td>{doc.createdAt}</td>
                                 <td>
                                     <Link href="#">
                                         View

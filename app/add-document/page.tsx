@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function AddDocumentPage() {
     // var declarations
-    const [documents, setDocuments] = useState<{ id: number; name: string; description: string; file: File | null }[]>([]);
+    const [documents, setDocuments] = useState<{ id: number; name: string; createdAt: string; description: string; file: File | null }[]>([]);
     const [id, setId] = useState(1);
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
@@ -28,10 +28,14 @@ export default function AddDocumentPage() {
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
 
+        // get the date that the new document created at
+        const createdAt = new Date().toLocaleDateString();
+
         // declare new object
         const newDocument = {
             id,
             name,
+            createdAt,
             description,
             file,
         };
